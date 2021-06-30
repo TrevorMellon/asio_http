@@ -3,6 +3,11 @@
     Copyright (c) 2017-2019 Julio Becerra Gomez
     See COPYING for license information.
 */
+
+#if WIN32
+# pragma optimize( "", off )
+#endif
+
 #include "asio_http/internal/connection_pool.h"
 
 #include "asio_http/internal/http_client_connection.h"
