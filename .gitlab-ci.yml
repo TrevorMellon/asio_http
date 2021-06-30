@@ -1,0 +1,15 @@
+
+build:
+  stage: build
+  image: gcc
+  tags:
+      - linux
+      - docker
+      - x64
+  before_script:
+    - apt update && apt -y install make autoconf cmake libboost1.74-dev
+  script:
+    - cmake -DBUILD_ASIO_HTTP_TESTS=ON .
+    - make
+    - ctest
+
